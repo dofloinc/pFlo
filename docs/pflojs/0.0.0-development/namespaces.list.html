@@ -1,0 +1,3544 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>PageFlo Namespaces</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.doflo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">PageFlo</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html">document</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="MutationHandler.html">MutationHandler</a></li><li><a href="PFLO.html">PFLO</a></li><li><a href="PFLO.browser.html">PFLO.browser</a></li><li><a href="PFLO.constants.html">PFLO.constants</a></li><li><a href="PFLO.plugins.html">PFLO.plugins</a></li><li><a href="PFLO.plugins.AutoXHR.html">PFLO.plugins.AutoXHR</a></li><li><a href="PFLO.plugins.BW.html">PFLO.plugins.BW</a></li><li><a href="PFLO.plugins.CACHE_RELOAD.html">PFLO.plugins.CACHE_RELOAD</a></li><li><a href="PFLO.plugins.Clicks.html">PFLO.plugins.Clicks</a></li><li><a href="PFLO.plugins.ConsentInlinedPlugin.html">PFLO.plugins.ConsentInlinedPlugin</a></li><li><a href="PFLO.plugins.Continuity.html">PFLO.plugins.Continuity</a></li><li><a href="PFLO.plugins.CT.html">PFLO.plugins.CT</a></li><li><a href="PFLO.plugins.DFE.html">PFLO.plugins.DFE</a></li><li><a href="PFLO.plugins.DNS.html">PFLO.plugins.DNS</a></li><li><a href="PFLO.plugins.Early.html">PFLO.plugins.Early</a></li><li><a href="PFLO.plugins.Errors.html">PFLO.plugins.Errors</a></li><li><a href="PFLO.plugins.EventTiming.html">PFLO.plugins.EventTiming</a></li><li><a href="PFLO.plugins.GUID.html">PFLO.plugins.GUID</a></li><li><a href="PFLO.plugins.History.html">PFLO.plugins.History</a></li><li><a href="PFLO.plugins.IFrameDelay.html">PFLO.plugins.IFrameDelay</a></li><li><a href="PFLO.plugins.IPv6.html">PFLO.plugins.IPv6</a></li><li><a href="PFLO.plugins.Memory.html">PFLO.plugins.Memory</a></li><li><a href="PFLO.plugins.Mobile.html">PFLO.plugins.Mobile</a></li><li><a href="PFLO.plugins.NavigationTiming.html">PFLO.plugins.NavigationTiming</a></li><li><a href="PFLO.plugins.PaintTiming.html">PFLO.plugins.PaintTiming</a></li><li><a href="PFLO.plugins.ResourceTiming.html">PFLO.plugins.ResourceTiming</a></li><li><a href="PFLO.plugins.RT.html">PFLO.plugins.RT</a></li><li><a href="PFLO.plugins.SPA.html">PFLO.plugins.SPA</a></li><li><a href="PFLO.plugins.TPAnalytics.html">PFLO.plugins.TPAnalytics</a></li><li><a href="PFLO.plugins.UserTiming.html">PFLO.plugins.UserTiming</a></li><li><a href="PFLO.session.html">PFLO.session</a></li><li><a href="PFLO.utils.html">PFLO.utils</a></li><li><a href="PFLO.utils.Compression.html">PFLO.utils.Compression</a></li><li><a href="PFLO_mq.html">PFLO_mq</a></li><li><a href="ProxyXHRImplementation.html">ProxyXHRImplementation</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html#event:onBeforePageFloBeacon">document#event:onBeforePageFloBeacon</a></li><li><a href="document.html#event:onPageFloBeacon">document#event:onPageFloBeacon</a></li><li><a href="document.html#event:onPageFloLoaded">document#event:onPageFloLoaded</a></li><li><a href="PFLO.html#event:beacon">PFLO#event:beacon</a></li><li><a href="PFLO.html#event:before_beacon">PFLO#event:before_beacon</a></li><li><a href="PFLO.html#event:before_early_beacon">PFLO#event:before_early_beacon</a></li><li><a href="PFLO.html#event:before_unload">PFLO#event:before_unload</a></li><li><a href="PFLO.html#event:click">PFLO#event:click</a></li><li><a href="PFLO.html#event:config">PFLO#event:config</a></li><li><a href="PFLO.html#event:dom_loaded">PFLO#event:dom_loaded</a></li><li><a href="PFLO.html#event:error">PFLO#event:error</a></li><li><a href="PFLO.html#event:form_submit">PFLO#event:form_submit</a></li><li><a href="PFLO.html#event:netinfo">PFLO#event:netinfo</a></li><li><a href="PFLO.html#event:page_load_beacon">PFLO#event:page_load_beacon</a></li><li><a href="PFLO.html#event:page_ready">PFLO#event:page_ready</a></li><li><a href="PFLO.html#event:page_unload">PFLO#event:page_unload</a></li><li><a href="PFLO.html#event:prerender_to_visible">PFLO#event:prerender_to_visible</a></li><li><a href="PFLO.html#event:rage_click">PFLO#event:rage_click</a></li><li><a href="PFLO.html#event:spa_cancel">PFLO#event:spa_cancel</a></li><li><a href="PFLO.html#event:spa_init">PFLO#event:spa_init</a></li><li><a href="PFLO.html#event:spa_navigation">PFLO#event:spa_navigation</a></li><li><a href="PFLO.html#event:visibility_changed">PFLO#event:visibility_changed</a></li><li><a href="PFLO.html#event:xhr_error">PFLO#event:xhr_error</a></li><li><a href="PFLO.html#event:xhr_init">PFLO#event:xhr_init</a></li><li><a href="PFLO.html#event:xhr_load">PFLO#event:xhr_load</a></li><li><a href="PFLO.html#event:xhr_send">PFLO#event:xhr_send</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-README.template.html">README.template</a></li><li><a href="tutorial-building.html">Building</a></li><li><a href="tutorial-contributing.html">Contributing</a></li><li><a href="tutorial-creating-plugins.html">Creating Plugins</a></li><li><a href="tutorial-header-snippets.html">Header Snippets</a></li><li><a href="tutorial-howtos.html">How-Tos</a></li><li><a href="tutorial-loader-snippet.html">Non-Blocking Loader Snippet</a></li><li><a href="tutorial-methodology.html">Methodology</a></li><li><a href="tutorial-page-overrides.html">Page Overrides</a></li><li><a href="tutorial-perf-tests.html">Performance Tests</a></li><li><a href="tutorial-tests.html">Tests</a></li><li><a href="tutorial-version-history.html">Version History</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#PFLO_check_doc_domain">PFLO_check_doc_domain</a></li><li><a href="global.html#PFLO_lstart">PFLO_lstart</a></li><li><a href="global.html#PFLO_onload">PFLO_onload</a></li><li><a href="global.html#PFLO_start">PFLO_start</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+
+    
+        <h1 class="page-title">Namespaces</h1>
+    
+    <section>
+
+    <header>
+        
+            <h1>
+            
+            </h1>
+            
+        
+    </header>
+
+
+    <article>
+        <div class="container-overview">
+        
+            
+
+            
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+            
+        
+        </div>
+
+        
+
+        
+
+        
+            <h2 class="subsection-title">Classes</h2>
+
+            <ul>
+                
+                    <li>
+                        <a href="MutationHandler.html">MutationHandler</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.html">PFLO</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.browser.html">browser</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.constants.html">constants</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.html">plugins</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.AutoXHR.html">AutoXHR</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.BW.html">BW</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.CACHE_RELOAD.html">CACHE_RELOAD</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.Clicks.html">Clicks</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.ConsentInlinedPlugin.html">ConsentInlinedPlugin</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.Continuity.html">Continuity</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.CT.html">CT</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.DFE.html">DFE</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.DNS.html">DNS</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.Early.html">Early</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.Errors.html">Errors</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.EventTiming.html">EventTiming</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.GUID.html">GUID</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.History.html">History</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.IFrameDelay.html">IFrameDelay</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.IPv6.html">IPv6</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.Memory.html">Memory</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.Mobile.html">Mobile</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.NavigationTiming.html">NavigationTiming</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.PaintTiming.html">PaintTiming</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.ResourceTiming.html">ResourceTiming</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.RT.html">RT</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.SPA.html">SPA</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.TPAnalytics.html">TPAnalytics</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.plugins.UserTiming.html">UserTiming</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.session.html">session</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.utils.html">utils</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO.utils.Compression.html">Compression</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="PFLO_mq.html">PFLO_mq</a>
+                        
+                    </li>
+                
+                    <li>
+                        <a href="ProxyXHRImplementation.html">ProxyXHRImplementation</a>
+                        
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <h2 class="subsection-title">Namespaces</h2>
+
+            <dl>
+                <dt><a href="namespaces.html#document"><a href="document.html">document</a></a></dt>
+                <dd></dd>
+            </dl>
+        
+
+        
+
+        
+
+        
+
+        
+            <h2 class="subsection-title">Events</h2>
+
+            <dl>
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:onBeforePageFloBeacon">onBeforePageFloBeacon</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Public event (fired on <code>document</code>), and can be subscribed via
+<code>document.addEventListener(&quot;onBeforePageFloBeacon&quot;, ...)</code> or
+<code>document.attachEvent(&quot;onpropertychange&quot;, ...)</code>.</p>
+<p>Maps to <a href="PFLO.html#event:before_beacon"><code>PFLO#event:before_beacon</code></a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Beacon variables</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:onPageFloBeacon">onPageFloBeacon</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Public event (fired on <code>document</code>), and can be subscribed via
+<code>document.addEventListener(&quot;onPageFloBeacon&quot;, ...)</code> or
+<code>document.attachEvent(&quot;onpropertychange&quot;, ...)</code>.</p>
+<p>Maps to <a href="PFLO.html#event:before_beacon"><code>PFLO#event:before_beacon</code></a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Beacon variables</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:onPageFloLoaded">onPageFloLoaded</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Public event (fired on <code>document</code>), and can be subscribed via
+<code>document.addEventListener(&quot;onPageFloLoaded&quot;, ...)</code> or
+<code>document.attachEvent(&quot;onpropertychange&quot;, ...)</code>.</p>
+<p>Fired when <a href="PFLO.html"><code>PFLO</code></a> has loaded and can be used.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:beacon">beacon</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when a beacon was sent.</p>
+<p>The beacon variables cannot be modified at this point.  Any calls
+to <a href="PFLO.html#.addVar"><code>PFLO.addVar</code></a> or <a href="PFLO.html#.removeVar"><code>PFLO.removeVar</code></a> will apply to the
+next beacon.</p>
+<p>Also known as <code>onbeacon</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Beacon variables</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:before_beacon">before_beacon</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when a beacon is about to be sent.</p>
+<p>The subscriber can still add variables to the beacon at this point,
+either by modifying the <code>vars</code> paramter or calling <a href="PFLO.html#.addVar"><code>PFLO.addVar</code></a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Beacon variables</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:before_early_beacon">before_early_beacon</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when an early beacon is about to be sent.</p>
+<p>The subscriber can still add variables to the early beacon at this point
+by calling <a href="PFLO.html#.addVar"><code>PFLO.addVar</code></a>.</p>
+<p>This event will only happen if <a href="PFLO.plugins.Early.html"><code>PFLO.plugins.Early</code></a> is enabled.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Event data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:before_unload">before_unload</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired before the document is about to be unloaded.</p>
+<p><code>window.beforeunload</code> will trigger this.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload">https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:click">click</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when the <code>click</code> event has happened on the <code>document</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:config">config</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever new configuration data is applied via <a href="PFLO.html#.init"><code>PFLO.init</code></a>.</p>
+<p>Also known as <code>onconfig</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Configuration data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:dom_loaded">dom_loaded</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired on <code>document.DOMContentLoaded</code>.</p>
+<p>The <code>DOMContentLoaded</code> event is fired when the initial HTML document
+has been completely loaded and parsed, without waiting for stylesheets,
+images, and subframes to finish loading</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded">https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:error">error</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever a page error has happened.</p>
+<p>This event will only happen if <a href="PFLO.plugins.Errors.html"><code>PFLO.plugins.Errors</code></a> is enabled.</p>
+<p>Also known as <code>onerror</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>err</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:form_submit">form_submit</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when any <code>FORM</code> element is submitted.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit">https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:netinfo">netinfo</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever connection information changes via the
+Network Information API.</p>
+<p>This event will only happen if <a href="PFLO.plugins.Mobile.html"><code>PFLO.plugins.Mobile</code></a> is enabled.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>connection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><code>navigator.connection</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:page_load_beacon">page_load_beacon</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when the page load beacon has been sent.</p>
+<p>This event should only happen once on a page.  It does not apply
+to SPA soft navigations.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>vars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Beacon variables</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:page_ready">page_ready</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when the page is usable by the user.</p>
+<p>By default this is fired when <code>window.onload</code> fires, but if you
+set <code>autorun</code> to false when calling <a href="PFLO.html#.init"><code>PFLO.init</code></a>, then you
+must explicitly fire this event by calling <a href="PFLO.html#event:page_ready"><code>PFLO#event:page_ready</code></a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Event</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Event triggering the page_ready</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:page_unload">page_unload</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired just before the browser unloads the page.</p>
+<p>The first event of <code>window.pagehide</code>, <code>window.beforeunload</code>,
+or <code>window.unload</code> will trigger this.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/pagehide">https://developer.mozilla.org/en-US/docs/Web/Events/pagehide</a></li>
+			
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload">https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload</a></li>
+			
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload">https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:prerender_to_visible">prerender_to_visible</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when the <code>visibilityState</code> of the document has changed from
+<code>prerender</code> to <code>visible</code></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/visibilitychange">https://developer.mozilla.org/en-US/docs/Web/Events/visibilitychange</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:rage_click">rage_click</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever a Rage Click is detected.</p>
+<p>This event will only happen if <a href="PFLO.plugins.Continuity.html"><code>PFLO.plugins.Continuity</code></a> is enabled.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>e</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Event</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Event</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:spa_cancel">spa_cancel</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever a SPA navigation is cancelled.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:spa_init">spa_init</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever a SPA plugin is about to track a new navigation.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>navType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Navigation type (<code>spa</code> or <code>spa_hard</code>)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SPA navigation parameters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:spa_navigation">spa_navigation</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever a SPA navigation is complete.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:visibility_changed">visibility_changed</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired on <code>document.visibilitychange</code>.</p>
+<p>The <code>visibilitychange</code> event is fired when the content of a tab has
+become visible or has been hidden.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class="tag-see method-doc-label method-doc-details-label">See:</h4>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/visibilitychange">https://developer.mozilla.org/en-US/docs/Web/Events/visibilitychange</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:xhr_error">xhr_error</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever and <code>XMLHttpRequest</code> has an error (if its <code>status</code> is
+set).</p>
+<p>This event will only happen if <a href="PFLO.plugins.AutoXHR.html"><code>PFLO.plugins.AutoXHR</code></a> is enabled.</p>
+<p>Also known as <code>onxhrerror</code>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>XHR data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:xhr_init">xhr_init</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever <code>XMLHttpRequest.open</code> is called.</p>
+<p>This event will only happen if <a href="PFLO.plugins.AutoXHR.html"><code>PFLO.plugins.AutoXHR</code></a> is enabled.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>XHR type (&quot;xhr&quot;)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:xhr_load">xhr_load</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired when an XMLHttpRequest has finished, or, if something calls
+<a href="PFLO.html#.responseEnd"><code>PFLO.responseEnd</code></a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Event data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    
+        <h3 class="method-name" class="name" id="event:xhr_send">xhr_send</h3>
+    
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>PageFlo event, subscribe via <a href="PFLO.html#.subscribe"><code>PFLO.subscribe</code></a>.</p>
+<p>Fired whenever <code>XMLHttpRequest.send</code> is called.</p>
+<p>This event will only happen if <a href="PFLO.plugins.AutoXHR.html"><code>PFLO.plugins.AutoXHR</code></a> is enabled.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+    <h4 class="subsection-title">Properties:</h4>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>xhr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><code>XMLHttpRequest</code> object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            </dl>
+        
+    </article>
+
+    </section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2010-2021 doFlo, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a>
+	
+		on Fri Aug 13th 2021
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

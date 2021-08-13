@@ -1,0 +1,27 @@
+<%= header %>
+<script>
+window.pfloxhr = "TestString";
+window.xhrparams = "TestString";
+
+// disable the navigator sendBeacon API
+if (window.navigator && typeof window.navigator.sendBeacon === "function") {
+	window.navigator.sendBeacon = undefined;
+}
+</script>
+<%= pfloSnippet %>
+<script src="06-beacon-type-get-no-xhr.js" type="text/javascript"></script>
+<script>
+PFLO_test.init({
+	testAfterOnBeacon: true,
+	beacon_type: "GET",
+	onPageFloLoaded: function() {
+		if (PFLO && typeof PFLO.sendXhrPostBeacon === "function") {
+			PFLO.sendXhrPostBeacon = function(xhr, paramsJoined) {
+				pfloxhr = xhr;
+				xhrparams = paramsJoined;
+			};
+		}
+	}
+});
+</script>
+<%= footer %>

@@ -1,0 +1,43 @@
+<%= header %>
+<%= continuitySnippet %>
+<%= pfloScript %>
+<!-- trigger First Paint -->
+<h1>30-tti-busy</h1>
+<!-- before this delayed image -->
+<img src="/delay?delay=5000&amp;file=assets/img.jpg"/>
+<script src="30-tti-busy.js" type="text/javascript"></script>
+<script>
+PFLO_test.init({
+	testAfterOnBeacon: true,
+	Continuity: {
+		enabled: true,
+		monitorLongTasks: false,
+		monitorFrameRate: false,
+		waitAfterOnload: 5000
+	}
+});
+
+//
+// Visual busy timeline (each character is 100ms, * = busy, _ = idle)
+// **********___***___*** (~2200ms)
+
+// loop for 1000ms to trigger a bunch of work
+window.workStart = PFLO.now();
+PFLO_test.busy(1000);
+
+// sleep for 300ms of idle
+setTimeout(function() {
+	// do another 300ms of work
+	PFLO_test.busy(300);
+
+	// sleep for 300ms of idle
+	setTimeout(function() {
+		// do another 300ms of work
+		PFLO_test.busy(300);
+
+		// time to interactive should be around this timestamp
+		window.workDone = PFLO.now();
+	}, 300);
+}, 300);
+</script>
+<%= footer %>

@@ -1,0 +1,29 @@
+<%= header %>
+<%= pfloScript %>
+<script>
+// RT suppresses PFLO.sendBeacon after pageready beacon
+delete PFLO.plugins.RT;
+// Continuity suppresses PFLO.sendBeacon on domcontentloaded beacon
+delete PFLO.plugins.Continuity;
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	PFLO.sendBeacon();
+});
+
+// PFLO sends a beacon itself on pageready...
+
+window.onload = function() {
+	window.setTimeout(function() {
+		PFLO.sendBeacon();
+	}, 1000);
+};
+
+</script>
+
+<script src="04-no-resend-after-complete.js" type="text/javascript"></script>
+<script>
+PFLO_test.init({
+	testAfterOnBeacon: 3
+});
+</script>
+<%= footer %>

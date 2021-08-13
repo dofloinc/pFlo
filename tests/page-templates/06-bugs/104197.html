@@ -1,0 +1,54 @@
+<%= header %>
+<script>
+// polyfill document.hidden if needed
+if (typeof document.hidden === "undefined") {
+	document.hidden = false;
+}
+</script>
+<%= pfloScript %>
+<script src="104197.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+// polyfill for google analytics
+window.ga = function(cb) {
+	cb(
+		{
+			get: function() {
+				return "XXXXXXXXXX.YYYYYYYYYY";
+			}
+		}
+	);
+};
+
+setTimeout(function() {
+	PFLO_test.init({
+		testAfterOnBeacon: 3,
+		afterFirstBeacon: function() {
+			setTimeout(function() {
+				// fire fake visibility changed events
+				PFLO.visibilityState = function() {
+					return "prerender";
+				};
+				PFLO.fireEvent("visibility_changed");
+
+				// fire another beacon
+				PFLO.responseEnd("foo");
+
+				// fake visible event
+				PFLO.visibilityState = function() {
+					return "visible";
+				};
+				PFLO.fireEvent("visibility_changed");
+			}, 250);
+		},
+		ResourceTiming: {
+			enabled: true
+		},
+		TPAnalytics: {
+			enabled: true,
+			clientids: true
+		}
+	});
+}, 1000);
+</script>
+<%= footer %>

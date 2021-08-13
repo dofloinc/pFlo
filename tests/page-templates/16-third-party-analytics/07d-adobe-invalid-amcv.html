@@ -1,0 +1,21 @@
+<%= header %>
+<%= pfloSnippet %>
+<script src="07d-adobe-invalid-amcv.js" type="text/javascript"></script>
+<script>
+
+// polyfill for adobe marketing cloud id
+window.s = {
+	visitor: {}
+};
+
+PFLO_test.clearCookies();
+
+PFLO_test.init({
+	testAfterOnBeacon: true,
+	TPAnalytics: {
+		enabled: true,
+		clientids: true
+	}
+});
+</script>
+<%= footer %>

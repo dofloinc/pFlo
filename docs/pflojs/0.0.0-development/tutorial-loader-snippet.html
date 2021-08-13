@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>PageFlo Tutorial: Non-Blocking Loader Snippet</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.doflo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">PageFlo</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html">document</a></li><li><a href="MutationHandler.html">MutationHandler</a></li><li><a href="PFLO.html">PFLO</a></li><li><a href="PFLO.browser.html">PFLO.browser</a></li><li><a href="PFLO.constants.html">PFLO.constants</a></li><li><a href="PFLO.plugins.html">PFLO.plugins</a></li><li><a href="PFLO.plugins.AutoXHR.html">PFLO.plugins.AutoXHR</a></li><li><a href="PFLO.plugins.BW.html">PFLO.plugins.BW</a></li><li><a href="PFLO.plugins.CACHE_RELOAD.html">PFLO.plugins.CACHE_RELOAD</a></li><li><a href="PFLO.plugins.Clicks.html">PFLO.plugins.Clicks</a></li><li><a href="PFLO.plugins.ConsentInlinedPlugin.html">PFLO.plugins.ConsentInlinedPlugin</a></li><li><a href="PFLO.plugins.Continuity.html">PFLO.plugins.Continuity</a></li><li><a href="PFLO.plugins.CT.html">PFLO.plugins.CT</a></li><li><a href="PFLO.plugins.DFE.html">PFLO.plugins.DFE</a></li><li><a href="PFLO.plugins.DNS.html">PFLO.plugins.DNS</a></li><li><a href="PFLO.plugins.Early.html">PFLO.plugins.Early</a></li><li><a href="PFLO.plugins.Errors.html">PFLO.plugins.Errors</a></li><li><a href="PFLO.plugins.EventTiming.html">PFLO.plugins.EventTiming</a></li><li><a href="PFLO.plugins.GUID.html">PFLO.plugins.GUID</a></li><li><a href="PFLO.plugins.History.html">PFLO.plugins.History</a></li><li><a href="PFLO.plugins.IFrameDelay.html">PFLO.plugins.IFrameDelay</a></li><li><a href="PFLO.plugins.IPv6.html">PFLO.plugins.IPv6</a></li><li><a href="PFLO.plugins.Memory.html">PFLO.plugins.Memory</a></li><li><a href="PFLO.plugins.Mobile.html">PFLO.plugins.Mobile</a></li><li><a href="PFLO.plugins.NavigationTiming.html">PFLO.plugins.NavigationTiming</a></li><li><a href="PFLO.plugins.PaintTiming.html">PFLO.plugins.PaintTiming</a></li><li><a href="PFLO.plugins.ResourceTiming.html">PFLO.plugins.ResourceTiming</a></li><li><a href="PFLO.plugins.RT.html">PFLO.plugins.RT</a></li><li><a href="PFLO.plugins.SPA.html">PFLO.plugins.SPA</a></li><li><a href="PFLO.plugins.TPAnalytics.html">PFLO.plugins.TPAnalytics</a></li><li><a href="PFLO.plugins.UserTiming.html">PFLO.plugins.UserTiming</a></li><li><a href="PFLO.session.html">PFLO.session</a></li><li><a href="PFLO.utils.html">PFLO.utils</a></li><li><a href="PFLO.utils.Compression.html">PFLO.utils.Compression</a></li><li><a href="PFLO_mq.html">PFLO_mq</a></li><li><a href="ProxyXHRImplementation.html">ProxyXHRImplementation</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html#event:onBeforePageFloBeacon">document#event:onBeforePageFloBeacon</a></li><li><a href="document.html#event:onPageFloBeacon">document#event:onPageFloBeacon</a></li><li><a href="document.html#event:onPageFloLoaded">document#event:onPageFloLoaded</a></li><li><a href="PFLO.html#event:beacon">PFLO#event:beacon</a></li><li><a href="PFLO.html#event:before_beacon">PFLO#event:before_beacon</a></li><li><a href="PFLO.html#event:before_early_beacon">PFLO#event:before_early_beacon</a></li><li><a href="PFLO.html#event:before_unload">PFLO#event:before_unload</a></li><li><a href="PFLO.html#event:click">PFLO#event:click</a></li><li><a href="PFLO.html#event:config">PFLO#event:config</a></li><li><a href="PFLO.html#event:dom_loaded">PFLO#event:dom_loaded</a></li><li><a href="PFLO.html#event:error">PFLO#event:error</a></li><li><a href="PFLO.html#event:form_submit">PFLO#event:form_submit</a></li><li><a href="PFLO.html#event:netinfo">PFLO#event:netinfo</a></li><li><a href="PFLO.html#event:page_load_beacon">PFLO#event:page_load_beacon</a></li><li><a href="PFLO.html#event:page_ready">PFLO#event:page_ready</a></li><li><a href="PFLO.html#event:page_unload">PFLO#event:page_unload</a></li><li><a href="PFLO.html#event:prerender_to_visible">PFLO#event:prerender_to_visible</a></li><li><a href="PFLO.html#event:rage_click">PFLO#event:rage_click</a></li><li><a href="PFLO.html#event:spa_cancel">PFLO#event:spa_cancel</a></li><li><a href="PFLO.html#event:spa_init">PFLO#event:spa_init</a></li><li><a href="PFLO.html#event:spa_navigation">PFLO#event:spa_navigation</a></li><li><a href="PFLO.html#event:visibility_changed">PFLO#event:visibility_changed</a></li><li><a href="PFLO.html#event:xhr_error">PFLO#event:xhr_error</a></li><li><a href="PFLO.html#event:xhr_init">PFLO#event:xhr_init</a></li><li><a href="PFLO.html#event:xhr_load">PFLO#event:xhr_load</a></li><li><a href="PFLO.html#event:xhr_send">PFLO#event:xhr_send</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-README.template.html">README.template</a></li><li><a href="tutorial-building.html">Building</a></li><li><a href="tutorial-contributing.html">Contributing</a></li><li><a href="tutorial-creating-plugins.html">Creating Plugins</a></li><li><a href="tutorial-header-snippets.html">Header Snippets</a></li><li><a href="tutorial-howtos.html">How-Tos</a></li><li><a href="tutorial-loader-snippet.html">Non-Blocking Loader Snippet</a></li><li><a href="tutorial-methodology.html">Methodology</a></li><li><a href="tutorial-page-overrides.html">Page Overrides</a></li><li><a href="tutorial-perf-tests.html">Performance Tests</a></li><li><a href="tutorial-tests.html">Tests</a></li><li><a href="tutorial-version-history.html">Version History</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#PFLO_check_doc_domain">PFLO_check_doc_domain</a></li><li><a href="global.html#PFLO_lstart">PFLO_lstart</a></li><li><a href="global.html#PFLO_onload">PFLO_onload</a></li><li><a href="global.html#PFLO_start">PFLO_start</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			<section class="tutorial-section">
+
+<header>
+    <h1>Non-Blocking Loader Snippet</h1>
+</header>
+
+<article>
+    <p>If you are loading pflo.js separately from your main application bundle, i.e.
+from a CDN or a third-party service (such as mPulse), we recommend loading pflo.js
+using the CSP-compliant non-blocking script loader pattern.</p>
+<p>The methodology, <a href="http://www.lognormal.com/blog/2012/12/12/the-script-loader-pattern/">developed by Philip Tellis</a>
+and others, and further <a href="https://calendar.perfplanet.com/2018/a-csp-compliant-non-blocking-script-loader/">improved in 2018</a>,
+ensures PageFlo (or any third-party JavaScript) loads asynchronously
+and non-blocking.  This means that the browser will not pause while the JavaScript
+is loading, nor will it block the <code>onload</code> event.</p>
+<p>The PageFlo Loader Snippet is currently around 210 lines of code (with comments), and minifies to around 2500 bytes.</p>
+<p>The snippet does the following:</p>
+<ol>
+<li>It checks whether or not the snippet has already been run or PageFlo has already
+been loaded.  If so, it exits.</li>
+<li>It adds a <code>window</code> <code>load</code> event handler, to ensure that PageFlo can measure
+the Page Load time in non-NavigationTiming browsers, even if pflo.js
+loads after the <code>load</code> event.</li>
+<li>For browsers that <a href="https://caniuse.com/#feat=link-rel-preload">support Preload</a> <code>&lt;link rel=&quot;preload&quot; as=&quot;script&quot;&gt;</code>,
+PageFlo will add a <code>&lt;link&gt;</code> node to tell the browser to fetch PageFlo.js.
+<ul>
+<li>Once the Preload has finished, PageFlo adds a regular <code>&lt;script&gt;</code> node to the page with the same PageFlo URL,
+which tells the browser to execute PageFlo.</li>
+</ul>
+</li>
+<li>For browsers that do not support Preload, or if Preload fails or doesn't trigger within the defined timeframe (default 3 seconds),
+the non-blocking IFRAME loader method is used.
+<ul>
+<li>A hidden <code>&lt;iframe&gt;</code> is injected into the page.</li>
+<li>The snippet attempts to read the IFRAME's <code>contentWindow.document</code>.  If it can't,
+it updates the IFRAME's <code>src</code> to add JavaScript that sets the IFRAME's <code>document.domain</code>
+to the current page's <code>document.domain</code>.  This ensures the anonymous IFRAME
+can communicate with the host page.</li>
+<li>It writes a function <code>_l()</code> to the IFRAME's <code>document</code> which will add a
+<code>&lt;script&gt;</code> tag that loads pflo.js.</li>
+<li>It sets the IFRAME's <code>&lt;body onload=&quot;document._l()&quot;&gt;</code> to run the function
+above, so the <code>&lt;script&gt;</code> tag is loaded after the IFRAME's <code>onload</code> event has fired.</li>
+</ul>
+</li>
+<li>For IE 6 and IE 7, which don't support the non-blocking IFRAME loader method (due to problems they have with <code>about:blank</code>
+URLs in secure contexts), a dynamic <code>&lt;script&gt;</code> node is added to the page.
+<ul>
+<li>Note this means that in IE 6 and 7, PageFlo could be a SPOF (Single Point of Failure) if the script is delayed,
+potentially delaying the Page Load.</li>
+</ul>
+</li>
+</ol>
+<p>Note: We split the <code>&lt;body</code> tag insertion into <code>&lt;bo</code> and <code>dy</code> to avoid server-side output filters that may replace <code>&lt;body</code> tags with their own code.</p>
+<p>For proof that the non-blocking script loader pattern does not affect page load,
+you can look at this
+<a href="http://dev.nicj.net/pflo-audit/test-mpulse-loader-snippet-delayed.html">test case</a>
+that delays JavaScript from loading by 5 seconds or these
+<a href="https://www.webpagetest.org/result/171221_HD_bb090190517fa8dd101859e8c1f327fe/">WebPagetest results</a>.</p>
+<h2>The Snippet</h2>
+<p>Here's the snippet:</p>
+<pre class="prettyprint source lang-javascript"><code>&lt;script>
+%loader_snippet%&lt;/script>
+</code></pre>
+<p>Minified:</p>
+<pre class="prettyprint source lang-javascript"><code>&lt;script>%minified_loader_snippet%&lt;/script>
+</code></pre>
+<h2>Delaying the Snippet</h2>
+<p>You may want to delay loading PageFlo until after the <code>onload</code> event.  This would
+ensure that no PageFlo code is executed in the critical-path of the page load.</p>
+<p>The main downside to doing this is that you are more likely to lose beacons
+from some users.  The longer it takes PageFlo to load on the page, the higher
+chance that the user will have navigated away, or closed the browser, before
+pflo.js is loaded.</p>
+<p>Here is a modification of the PageFlo Loader Snippet to delay until after
+<code>onload</code>:</p>
+<pre class="prettyprint source lang-javascript"><code>&lt;script>
+%delayed_loader_snippet%&lt;/script>
+</code></pre>
+<p>Minified:</p>
+<pre class="prettyprint source lang-javascript"><code>&lt;script>%minified_delayed_loader_snippet%&lt;/script>
+</code></pre>
+</article>
+
+
+
+</section>
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2010-2021 doFlo, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a>
+	
+		on Fri Aug 13th 2021
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

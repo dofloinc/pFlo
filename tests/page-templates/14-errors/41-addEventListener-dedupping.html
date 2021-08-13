@@ -1,0 +1,27 @@
+<%= header %>
+<%= pfloDelayedSnippet %>
+<script src="./41-addEventListener-dedupping.js" type="text/javascript"></script>
+<script>
+  function handler() {
+	PFLO.appendVar("foo", "bar");
+  }
+  function attach() {
+	window.addEventListener("foo", handler);
+  }
+
+  PFLO_test.init({
+	testAfterOnBeacon: 1,
+	Errors: {
+		enabled: true,
+		monitorEvents: true,
+		sendAfterOnload: true
+	},
+	onPageFloLoaded: function() {
+		attach();
+		window.dispatchEvent(new Event("foo"));
+	}
+  });
+
+  attach();
+</script>
+<%= footer %>

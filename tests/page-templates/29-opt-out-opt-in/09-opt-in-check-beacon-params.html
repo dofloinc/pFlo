@@ -1,0 +1,23 @@
+<%= header %>
+<script>
+/*eslint-disable no-unused-vars*/
+window.PFLO_CONSENT_CONFIG = {
+	enabled: true,
+	optInRequired: true
+};
+</script>
+<%= consentInlinePlugin %>
+<%= pfloScript %>
+<script src="09-opt-in-check-beacon-params.js" type="text/javascript"></script>
+<script>
+PFLO_OPT_IN();
+PFLO_test.init({
+	site_domain: document.domain,
+	testAfterOnBeacon: 2,
+	afterFirstBeacon: function() {
+		// fire a beacon
+		PFLO.responseEnd("foo");
+	}
+});
+</script>
+<%= footer %>

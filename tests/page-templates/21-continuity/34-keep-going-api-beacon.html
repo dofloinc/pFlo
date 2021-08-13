@@ -1,0 +1,32 @@
+<%= header %>
+<%= continuitySnippet %>
+<%= pfloScript %>
+<!-- trigger First Paint -->
+<h1>34-keep-going-api-beacon</h1>
+<!-- before this delayed image -->
+<img src="/delay?delay=5000&amp;file=assets/img.jpg"/>
+<script src="34-keep-going-api-beacon.js" type="text/javascript"></script>
+<script>
+PFLO_test.init({
+	testAfterOnBeacon: true,
+	Continuity: {
+		enabled: true,
+		waitAfterOnload: 3000
+	},
+	onPageFloLoaded: function() {
+		// Force another beacon type to go out
+		// send the beacon data to the specified URL
+		PFLO.sendBeaconData({
+			"http.initiator": "api_custom_metric",
+			n: 1,
+			v: PFLO.version,
+			pid: "abcd1234",
+			"h.key": PFLO.getVar("h.key"),
+			"h.d": PFLO.getVar("h.d"),
+			"h.cr": PFLO.getVar("h.cr"),
+			"h.t": PFLO.getVar("h.t")
+		});
+	}
+});
+</script>
+<%= footer %>

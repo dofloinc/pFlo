@@ -1,0 +1,74 @@
+name: Github Build
+
+on:
+  push:
+    branches:
+      - main
+  # pull_request: this is picked up automatically by a push to master
+  #   types:
+  #     - closed
+  release:
+    types:
+      - published
+
+jobs:
+  login:
+    if: github.event_name != 'push' || (github.event_name == 'push' && contains(toJson(github.event.commits), '***NO_CI***') == false && contains(toJson(github.event.commits), '[ci skip]') == false && contains(toJson(github.event.commits), '[skip ci]') == false)
+    runs-on: ubuntu-20.04
+    outputs:
+      token: ${{ steps.ecr.outputs.token }}
+    steps:
+      - id: echo
+        run: |
+          echo ${{github.event_name}}
+      - id: ecr
+        name: Login to ECR
+        uses: PhutureCorp/ecr-login-token@v0.8.0
+        with:
+          registry: 542393931612.dkr.ecr.us-west-2.amazonaws.com
+          username: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }} ## Machine User for Builds
+          password: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }} ## Machine User for Builds
+  build:
+    runs-on: ubuntu-20.04
+    needs: login
+    container:
+      image: 542393931612.dkr.ecr.us-west-2.amazonaws.com/github-static-site:v0.0.1
+      credentials:
+        username: AWS
+        password: ${{ needs.login.outputs.token }} ## Short Lived ECR Token
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Container SSH Agent
+        uses: PhutureCorp/container-ssh-agent@v0.0.1
+        with:
+          ssh-private-key: ${{ secrets.RSA }} ## Machine User for Builds
+          home-dir: "/root" ## you can not trust the container's home env var
+      - name: Run Deploy
+        run: |
+          ./deploy.sh
+        env:
+          # We have to pass more than we should here but environment variables don't make it in by default
+          GITHUB_REF: ${{ github.REF }}
+          GITHUB_SHA: ${{ github.SHA }}
+          GITHUB_EVENT: ${{ github.EVENT_NAME }}
+          GITHUB_OAUTH_TOKEN: ${{ secrets.OAUTH_TOKEN }} ## Machine User for Builds
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} ## Machine User for Builds
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} ## Machine User for Builds
+          AWS_REGION: us-west-2
+      - name: Slack Notify
+        uses: rtCamp/action-slack-notify@v2.1.1
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: "floBot"
+          SLACK_ICON: "https://res.cloudinary.com/flowon/image/upload/v1607152165/logos/social-dark.png"
+          SLACK_FOOTER: "Powered By doflo floBot"
+      - name: The job has failed
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2.1.1
+        env:
+          SLACK_COLOR: "#FF007F" # Hot Pink
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: "👹 evil floBot"
+          SLACK_ICON: "https://res.cloudinary.com/flowon/image/upload/v1607152165/logos/social-dark.png"
+          SLACK_FOOTER: "We were all let down by the doflo floBot"

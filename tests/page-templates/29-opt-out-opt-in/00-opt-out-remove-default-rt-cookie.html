@@ -1,0 +1,20 @@
+<%= header %>
+<script>
+/*eslint-disable no-unused-vars*/
+window.PFLO_CONSENT_CONFIG = {
+	enabled: true
+};
+</script>
+<%= consentInlinePlugin %>
+<%= pfloScript %>
+<script src="00-opt-out-remove-default-rt-cookie.js" type="text/javascript"></script>
+<script>
+PFLO_test.init({
+	testAfterOnBeacon: 1,
+	site_domain: document.domain,
+	afterFirstBeacon: function() {
+		PFLO_OPT_OUT();
+	}
+});
+</script>
+<%= footer %>

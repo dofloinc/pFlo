@@ -1,0 +1,26 @@
+<%= header %>
+<!--
+This bug found PageFlo being loaded several times
+-->
+<script src="84041.js" type="text/javascript"></script>
+<%= pfloScript %>
+<script>
+PFLO.plugins.Test = {
+	initCount: 0,
+	init: function() {
+		this.initCount++;
+	},
+	is_complete: function() {
+		return true;
+	}
+};
+
+PFLO_test.init({
+	ResourceTiming: {
+		enabled: true
+	},
+	testAfterOnBeacon: true
+});
+</script>
+<%= pfloScript %>
+<%= footer %>

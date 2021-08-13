@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>PageFlo Tutorial: Tests</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.doflo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">PageFlo</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html">document</a></li><li><a href="MutationHandler.html">MutationHandler</a></li><li><a href="PFLO.html">PFLO</a></li><li><a href="PFLO.browser.html">PFLO.browser</a></li><li><a href="PFLO.constants.html">PFLO.constants</a></li><li><a href="PFLO.plugins.html">PFLO.plugins</a></li><li><a href="PFLO.plugins.AutoXHR.html">PFLO.plugins.AutoXHR</a></li><li><a href="PFLO.plugins.BW.html">PFLO.plugins.BW</a></li><li><a href="PFLO.plugins.CACHE_RELOAD.html">PFLO.plugins.CACHE_RELOAD</a></li><li><a href="PFLO.plugins.Clicks.html">PFLO.plugins.Clicks</a></li><li><a href="PFLO.plugins.ConsentInlinedPlugin.html">PFLO.plugins.ConsentInlinedPlugin</a></li><li><a href="PFLO.plugins.Continuity.html">PFLO.plugins.Continuity</a></li><li><a href="PFLO.plugins.CT.html">PFLO.plugins.CT</a></li><li><a href="PFLO.plugins.DFE.html">PFLO.plugins.DFE</a></li><li><a href="PFLO.plugins.DNS.html">PFLO.plugins.DNS</a></li><li><a href="PFLO.plugins.Early.html">PFLO.plugins.Early</a></li><li><a href="PFLO.plugins.Errors.html">PFLO.plugins.Errors</a></li><li><a href="PFLO.plugins.EventTiming.html">PFLO.plugins.EventTiming</a></li><li><a href="PFLO.plugins.GUID.html">PFLO.plugins.GUID</a></li><li><a href="PFLO.plugins.History.html">PFLO.plugins.History</a></li><li><a href="PFLO.plugins.IFrameDelay.html">PFLO.plugins.IFrameDelay</a></li><li><a href="PFLO.plugins.IPv6.html">PFLO.plugins.IPv6</a></li><li><a href="PFLO.plugins.Memory.html">PFLO.plugins.Memory</a></li><li><a href="PFLO.plugins.Mobile.html">PFLO.plugins.Mobile</a></li><li><a href="PFLO.plugins.NavigationTiming.html">PFLO.plugins.NavigationTiming</a></li><li><a href="PFLO.plugins.PaintTiming.html">PFLO.plugins.PaintTiming</a></li><li><a href="PFLO.plugins.ResourceTiming.html">PFLO.plugins.ResourceTiming</a></li><li><a href="PFLO.plugins.RT.html">PFLO.plugins.RT</a></li><li><a href="PFLO.plugins.SPA.html">PFLO.plugins.SPA</a></li><li><a href="PFLO.plugins.TPAnalytics.html">PFLO.plugins.TPAnalytics</a></li><li><a href="PFLO.plugins.UserTiming.html">PFLO.plugins.UserTiming</a></li><li><a href="PFLO.session.html">PFLO.session</a></li><li><a href="PFLO.utils.html">PFLO.utils</a></li><li><a href="PFLO.utils.Compression.html">PFLO.utils.Compression</a></li><li><a href="PFLO_mq.html">PFLO_mq</a></li><li><a href="ProxyXHRImplementation.html">ProxyXHRImplementation</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html#event:onBeforePageFloBeacon">document#event:onBeforePageFloBeacon</a></li><li><a href="document.html#event:onPageFloBeacon">document#event:onPageFloBeacon</a></li><li><a href="document.html#event:onPageFloLoaded">document#event:onPageFloLoaded</a></li><li><a href="PFLO.html#event:beacon">PFLO#event:beacon</a></li><li><a href="PFLO.html#event:before_beacon">PFLO#event:before_beacon</a></li><li><a href="PFLO.html#event:before_early_beacon">PFLO#event:before_early_beacon</a></li><li><a href="PFLO.html#event:before_unload">PFLO#event:before_unload</a></li><li><a href="PFLO.html#event:click">PFLO#event:click</a></li><li><a href="PFLO.html#event:config">PFLO#event:config</a></li><li><a href="PFLO.html#event:dom_loaded">PFLO#event:dom_loaded</a></li><li><a href="PFLO.html#event:error">PFLO#event:error</a></li><li><a href="PFLO.html#event:form_submit">PFLO#event:form_submit</a></li><li><a href="PFLO.html#event:netinfo">PFLO#event:netinfo</a></li><li><a href="PFLO.html#event:page_load_beacon">PFLO#event:page_load_beacon</a></li><li><a href="PFLO.html#event:page_ready">PFLO#event:page_ready</a></li><li><a href="PFLO.html#event:page_unload">PFLO#event:page_unload</a></li><li><a href="PFLO.html#event:prerender_to_visible">PFLO#event:prerender_to_visible</a></li><li><a href="PFLO.html#event:rage_click">PFLO#event:rage_click</a></li><li><a href="PFLO.html#event:spa_cancel">PFLO#event:spa_cancel</a></li><li><a href="PFLO.html#event:spa_init">PFLO#event:spa_init</a></li><li><a href="PFLO.html#event:spa_navigation">PFLO#event:spa_navigation</a></li><li><a href="PFLO.html#event:visibility_changed">PFLO#event:visibility_changed</a></li><li><a href="PFLO.html#event:xhr_error">PFLO#event:xhr_error</a></li><li><a href="PFLO.html#event:xhr_init">PFLO#event:xhr_init</a></li><li><a href="PFLO.html#event:xhr_load">PFLO#event:xhr_load</a></li><li><a href="PFLO.html#event:xhr_send">PFLO#event:xhr_send</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-README.template.html">README.template</a></li><li><a href="tutorial-building.html">Building</a></li><li><a href="tutorial-contributing.html">Contributing</a></li><li><a href="tutorial-creating-plugins.html">Creating Plugins</a></li><li><a href="tutorial-header-snippets.html">Header Snippets</a></li><li><a href="tutorial-howtos.html">How-Tos</a></li><li><a href="tutorial-loader-snippet.html">Non-Blocking Loader Snippet</a></li><li><a href="tutorial-methodology.html">Methodology</a></li><li><a href="tutorial-page-overrides.html">Page Overrides</a></li><li><a href="tutorial-perf-tests.html">Performance Tests</a></li><li><a href="tutorial-tests.html">Tests</a></li><li><a href="tutorial-version-history.html">Version History</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#PFLO_check_doc_domain">PFLO_check_doc_domain</a></li><li><a href="global.html#PFLO_lstart">PFLO_lstart</a></li><li><a href="global.html#PFLO_onload">PFLO_onload</a></li><li><a href="global.html#PFLO_start">PFLO_start</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			<section class="tutorial-section">
+
+<header>
+    <h1>Tests</h1>
+</header>
+
+<article>
+    <p>PageFlo has extensive test coverage in the form of Unit Tests and End-to-End (E2E)
+Test suites.</p>
+<h2>Test Environment</h2>
+<p>To configure the test environment, you will need to install all of the required
+NPM and Bower dependencies:</p>
+<pre class="prettyprint source lang-bash"><code>npm install
+bower install
+node node_modules/protractor/bin/webdriver-manager update
+</code></pre>
+<p>In addition, you should map the following two domains to <code>127.0.0.1</code>:</p>
+<ul>
+<li><code>pflo-test.local</code></li>
+<li><code>pflo-test2.local</code></li>
+</ul>
+<p>e.g.</p>
+<pre class="prettyprint source"><code># /etc/hosts or C:\windows\system32\drivers\etc\hosts
+127.0.0.1 pflo-test.local pflo-test2.local
+</code></pre>
+<h2>Unit Tests</h2>
+<p>PageFlo's Unit Tests validate PageFlo's public APIs and utility functions.</p>
+<p>Unit Tests should not depend on the environment (e.g. HTML structure, a specific
+browser, or other environment setup).  If you need a specific environment, you
+should create an End-to-End (E2E) test.</p>
+<p>Unit Tests are located in <code>tests/unit/*.js</code>.  They are loosely organized into
+components or plugins.</p>
+<p>PageFlo's Unit Tests can be run from your local browser or in headless mode:</p>
+<pre class="prettyprint source lang-bash"><code>grunt test
+</code></pre>
+<p>To build, run or debug the Unit Tests in your local browser, you will need to spawn
+a local webserver to host the <code>tests/unit/*</code> files.  You can do this by running
+the following:</p>
+<pre class="prettyprint source lang-bash"><code>grunt test:debug
+</code></pre>
+<p>Once the webserver has started, you should be able to visit the following URL
+in your browser:</p>
+<p>http://pflo-test.local:4002/unit/</p>
+<p>All Unit Test files are manually included via <code>tests/unit/index.html</code>.</p>
+<p>In addition, you can run any of the following combinations to automatically run
+all <code>tests/unit/*.js</code> files via Grunt and <a href="https://karma-runner.github.io/">Karma</a>:</p>
+<ul>
+<li><code>grunt test:unit</code></li>
+<li><code>grunt test:unit:all</code></li>
+<li><code>grunt test:unit:allHeadless</code></li>
+<li><code>grunt test:unit:Chrome</code></li>
+<li><code>grunt test:unit:ChromeHeadless</code></li>
+<li><code>grunt test:unit:Firefox</code></li>
+<li><code>grunt test:unit:FirefoxHeadless</code></li>
+<li><code>grunt test:unit:Edge</code></li>
+<li><code>grunt test:unit:IE</code></li>
+<li><code>grunt test:unit:Opera</code></li>
+<li><code>grunt test:unit:Safari</code></li>
+<li><code>grunt test:unit:PhantomJS</code></li>
+</ul>
+<p>The Unit Tests utilize <a href="http://www.chaijs.com/api/assert/">Chai Assert</a> for validations.</p>
+<h2>End-to-End (E2E) Tests</h2>
+<p>PageFlo's End-to-End (E2E) Tests validate how PageFlo behaves in various
+scenarios and environments: user actions (e.g. navigating between pages), page
+constructions (e.g. with specific DOM elements), frameworks (e.g. SPAs), etc.</p>
+<p>E2E Tests are located in <code>tests/page-templates/**/*.[js|html]</code>.  They are loosely organized into
+subdirectories of scenarios or plugins.</p>
+<p>Each E2E test has two files: <code>01-name.html</code> contains the scenario (e.g. what is happening
+in the test) while <code>01-name.js</code> contains the test validations.</p>
+<p>When <code>grunt test</code> or <code>grunt build:test</code> is called, the <code>tests/page-templates/**/*</code>
+files are processed (templates applied) and output into <code>tests/pages/</code>, whose
+files are loaded by the browser during test execution.  Some of the templates live in <code>tests/page-templates/*</code>.</p>
+<p>The E2E Tests utilize <a href="http://www.chaijs.com/api/assert/">Chai Assert</a> for validations.</p>
+<p>PageFlo's E2E Tests can be run from your local browser or in headless mode.</p>
+<p>To build, run or debug the E2E Tests in your local browser, you will need to spawn
+a local webserver to host the <code>tests/pages/*</code> files.  You can do this by running
+the following:</p>
+<pre class="prettyprint source lang-bash"><code>grunt test:debug
+</code></pre>
+<p>In addition, you can run any of the following combinations to automatically run
+all E2E tests files via Grunt and <a href="https://www.protractortest.org/">Protractor</a>:</p>
+<ul>
+<li><code>grunt test:e2e</code></li>
+<li><code>grunt test:e2e:browser</code></li>
+<li><code>grunt test:e2e:debug</code> - will only run tests in <code>tests/e2e/e2e-debug.json</code></li>
+<li><code>grunt test:e2e:PhantomJS</code></li>
+<li><code>grunt test:e2e:Chrome</code></li>
+<li><code>grunt test:e2e:ChromeHeadless</code></li>
+<li><code>grunt test:e2e:Firefox</code></li>
+<li><code>grunt test:e2e:FirefoxHeadless</code></li>
+<li><code>grunt test:e2e:Edge</code></li>
+<li><code>grunt test:e2e:IE</code></li>
+<li><code>grunt test:e2e:Safari</code></li>
+</ul>
+</article>
+
+
+
+</section>
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2010-2021 doFlo, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a>
+	
+		on Fri Aug 13th 2021
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

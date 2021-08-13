@@ -1,0 +1,31 @@
+<%= header %>
+<script>
+/*eslint-disable no-unused-vars*/
+window.PFLO_CONSENT_CONFIG = {
+	enabled: true
+};
+</script>
+<%= consentInlinePlugin %>
+<%= pfloScript %>
+<script src="13-opt-out-no-cookies-after-init-reload.js" type="text/javascript"></script>
+<script>
+PFLO_test.init({
+	site_domain: document.domain,
+	testAfterOnBeacon: false,
+	onPageFloLoaded: function() {
+		PFLO.subscribe("page_ready", function() {
+			PFLO_OPT_OUT();
+
+			setTimeout(function() {
+				// Re-init PageFlo
+				PFLO.init();
+
+				setTimeout(function() {
+					PFLO_test.runTests();
+				}, 500);
+			}, 100);
+		});
+	}
+});
+</script>
+<%= footer %>

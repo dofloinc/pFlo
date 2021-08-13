@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>PageFlo Tutorial: Opt-out or Opt-in</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.doflo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">PageFlo</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html">document</a></li><li><a href="MutationHandler.html">MutationHandler</a></li><li><a href="PFLO.html">PFLO</a></li><li><a href="PFLO.browser.html">PFLO.browser</a></li><li><a href="PFLO.constants.html">PFLO.constants</a></li><li><a href="PFLO.plugins.html">PFLO.plugins</a></li><li><a href="PFLO.plugins.AutoXHR.html">PFLO.plugins.AutoXHR</a></li><li><a href="PFLO.plugins.BW.html">PFLO.plugins.BW</a></li><li><a href="PFLO.plugins.CACHE_RELOAD.html">PFLO.plugins.CACHE_RELOAD</a></li><li><a href="PFLO.plugins.Clicks.html">PFLO.plugins.Clicks</a></li><li><a href="PFLO.plugins.ConsentInlinedPlugin.html">PFLO.plugins.ConsentInlinedPlugin</a></li><li><a href="PFLO.plugins.Continuity.html">PFLO.plugins.Continuity</a></li><li><a href="PFLO.plugins.CT.html">PFLO.plugins.CT</a></li><li><a href="PFLO.plugins.DFE.html">PFLO.plugins.DFE</a></li><li><a href="PFLO.plugins.DNS.html">PFLO.plugins.DNS</a></li><li><a href="PFLO.plugins.Early.html">PFLO.plugins.Early</a></li><li><a href="PFLO.plugins.Errors.html">PFLO.plugins.Errors</a></li><li><a href="PFLO.plugins.EventTiming.html">PFLO.plugins.EventTiming</a></li><li><a href="PFLO.plugins.GUID.html">PFLO.plugins.GUID</a></li><li><a href="PFLO.plugins.History.html">PFLO.plugins.History</a></li><li><a href="PFLO.plugins.IFrameDelay.html">PFLO.plugins.IFrameDelay</a></li><li><a href="PFLO.plugins.IPv6.html">PFLO.plugins.IPv6</a></li><li><a href="PFLO.plugins.Memory.html">PFLO.plugins.Memory</a></li><li><a href="PFLO.plugins.Mobile.html">PFLO.plugins.Mobile</a></li><li><a href="PFLO.plugins.NavigationTiming.html">PFLO.plugins.NavigationTiming</a></li><li><a href="PFLO.plugins.PaintTiming.html">PFLO.plugins.PaintTiming</a></li><li><a href="PFLO.plugins.ResourceTiming.html">PFLO.plugins.ResourceTiming</a></li><li><a href="PFLO.plugins.RT.html">PFLO.plugins.RT</a></li><li><a href="PFLO.plugins.SPA.html">PFLO.plugins.SPA</a></li><li><a href="PFLO.plugins.TPAnalytics.html">PFLO.plugins.TPAnalytics</a></li><li><a href="PFLO.plugins.UserTiming.html">PFLO.plugins.UserTiming</a></li><li><a href="PFLO.session.html">PFLO.session</a></li><li><a href="PFLO.utils.html">PFLO.utils</a></li><li><a href="PFLO.utils.Compression.html">PFLO.utils.Compression</a></li><li><a href="PFLO_mq.html">PFLO_mq</a></li><li><a href="ProxyXHRImplementation.html">ProxyXHRImplementation</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="document.html#event:onBeforePageFloBeacon">document#event:onBeforePageFloBeacon</a></li><li><a href="document.html#event:onPageFloBeacon">document#event:onPageFloBeacon</a></li><li><a href="document.html#event:onPageFloLoaded">document#event:onPageFloLoaded</a></li><li><a href="PFLO.html#event:beacon">PFLO#event:beacon</a></li><li><a href="PFLO.html#event:before_beacon">PFLO#event:before_beacon</a></li><li><a href="PFLO.html#event:before_early_beacon">PFLO#event:before_early_beacon</a></li><li><a href="PFLO.html#event:before_unload">PFLO#event:before_unload</a></li><li><a href="PFLO.html#event:click">PFLO#event:click</a></li><li><a href="PFLO.html#event:config">PFLO#event:config</a></li><li><a href="PFLO.html#event:dom_loaded">PFLO#event:dom_loaded</a></li><li><a href="PFLO.html#event:error">PFLO#event:error</a></li><li><a href="PFLO.html#event:form_submit">PFLO#event:form_submit</a></li><li><a href="PFLO.html#event:netinfo">PFLO#event:netinfo</a></li><li><a href="PFLO.html#event:page_load_beacon">PFLO#event:page_load_beacon</a></li><li><a href="PFLO.html#event:page_ready">PFLO#event:page_ready</a></li><li><a href="PFLO.html#event:page_unload">PFLO#event:page_unload</a></li><li><a href="PFLO.html#event:prerender_to_visible">PFLO#event:prerender_to_visible</a></li><li><a href="PFLO.html#event:rage_click">PFLO#event:rage_click</a></li><li><a href="PFLO.html#event:spa_cancel">PFLO#event:spa_cancel</a></li><li><a href="PFLO.html#event:spa_init">PFLO#event:spa_init</a></li><li><a href="PFLO.html#event:spa_navigation">PFLO#event:spa_navigation</a></li><li><a href="PFLO.html#event:visibility_changed">PFLO#event:visibility_changed</a></li><li><a href="PFLO.html#event:xhr_error">PFLO#event:xhr_error</a></li><li><a href="PFLO.html#event:xhr_init">PFLO#event:xhr_init</a></li><li><a href="PFLO.html#event:xhr_load">PFLO#event:xhr_load</a></li><li><a href="PFLO.html#event:xhr_send">PFLO#event:xhr_send</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-README.template.html">README.template</a></li><li><a href="tutorial-building.html">Building</a></li><li><a href="tutorial-contributing.html">Contributing</a></li><li><a href="tutorial-creating-plugins.html">Creating Plugins</a></li><li><a href="tutorial-header-snippets.html">Header Snippets</a></li><li><a href="tutorial-howtos.html">How-Tos</a></li><li><a href="tutorial-loader-snippet.html">Non-Blocking Loader Snippet</a></li><li><a href="tutorial-methodology.html">Methodology</a></li><li><a href="tutorial-page-overrides.html">Page Overrides</a></li><li><a href="tutorial-perf-tests.html">Performance Tests</a></li><li><a href="tutorial-tests.html">Tests</a></li><li><a href="tutorial-version-history.html">Version History</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#PFLO_check_doc_domain">PFLO_check_doc_domain</a></li><li><a href="global.html#PFLO_lstart">PFLO_lstart</a></li><li><a href="global.html#PFLO_onload">PFLO_onload</a></li><li><a href="global.html#PFLO_start">PFLO_start</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			<section class="tutorial-section">
+
+<header>
+    <h1>Opt-out or Opt-in</h1>
+</header>
+
+<article>
+    <div style="border: 1px solid #ccc; padding: 0 10px 10px; margin-bottom: 20px">
+<h3 style="margin-top:10px;">Disclaimer:</h3>
+<p style="margin-bottom: 0">This tutorial does not constitute legal advice or a legal opinion on any matter discussed. This tutorial is for educational purposes only. If you have a specific legal question, please consult with an attorney of your own choice.</p>
+</div>
+<p>PageFlo is an open source JavaScript library that measures a web site’s performance. As such it is considered in some countries in the EU and Asia as <strong>“cookie technology”</strong> and triggers certain data protection requirements. Such requirements vary depending on the categorization of cookie technology used for website performance measurement by local authorities. Some authorities require consent by end users to the cookie technology prior to its placement on a website (<strong>&quot;opt-in&quot;</strong>). According to <strong>GDPR</strong> and other applicable laws, such consent must be freely given, specific, informed and unambiguous. Some authorities accept the placement of cookie technology on a website without consent and require the implementation of a mechanism to stop the cookie usage once the end user requests so (<strong>&quot;opt-out&quot;</strong>). Such setup is e.g. accepted under <strong>CCPA</strong>, the California Consumer Privacy Act that entered into force January 1, 2020.</p>
+<p>This tutorial describes techniques and configurations that help PageFlo users to instrument opt-out and opt-in scenarios. In addition the tutorial describes how to instrument 3 different consent management techniques via special <a href="./PFLO.plugins.ConsentInlinedPlugin.html">Consent Inlined Plugin</a>, a PageFlo Loader Wrapper and the Osano Cookies Consent library.</p>
+<p>Tutorial structure:</p>
+<ol>
+<li><a href="#scenarios">Opt-out and Opt-in scenarios</a></li>
+<li><a href="#cookies-and-local-storage">Cookies and Local Storage</a></li>
+<li><a href="#consent-inline-plugin">Consent Inline Plugin Overview</a>
+<ol>
+<li><a href="#opt-out">Opt-out example</a></li>
+<li><a href="#opt-in">Opt-in example</a></li>
+</ol>
+</li>
+<li><a href="#opt-in-loader-wrapper">Opt-in with PageFlo Loader Wrapper</a></li>
+<li><a href="#cookie-consent-popup-examples">Cookie Consent library and Consent Inline Plugin example</a>
+<ol>
+<li><a href="#popup-examples-opt-out">Opt-out example</a></li>
+<li><a href="#popup-examples-opt-in">Opt-in example</a></li>
+</ol>
+</li>
+</ol>
+<p><a name="scenarios"></a></p>
+<h2>1. Opt-out and Opt-in scenarios</h2>
+<p>We identified 3 common scenarios how PageFlo could be loaded to comply with the applicable data protection requirements.</p>
+<ul>
+<li><strong>Opt-out from PageFlo</strong>: By default PageFlo is loaded on the page and sends performance data. PageFlo will be disabled and the PageFlo cookies will be deleted if a visitor opts-out from PageFlo through Cookie Consent popup.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Before opt-out</th>
+<th>After opt-out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PageFlo Loaded</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Beacons Sent</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>RT Cookie exists</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>BA Cookie  exists</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>PFLO_CONSENT Cookie  exists</td>
+<td>No</td>
+<td>Yes (value <code>opted-out</code>)</td>
+</tr>
+<tr>
+<td>Extra beacon params</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Opt-in to PageFlo (PageFlo loaded before opt-in)</strong>: By default PageFlo is loaded on the page and does <strong>NOT</strong> send performance data. Performance data will be sent after a visitor opts-in to PageFlo through a Cookie Consent popup.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Before opt-in</th>
+<th>After opt-in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PageFlo Loaded</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Beacons Sent</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>RT Cookie exists</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BA Cookie  exists</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>PFLO_CONSENT Cookie  exists</td>
+<td>No</td>
+<td>Yes (value <code>opted-in</code>)</td>
+</tr>
+<tr>
+<td>Extra beacon params</td>
+<td>No</td>
+<td><code>cip.in</code>, <code>cip.v</code></td>
+</tr>
+</tbody>
+</table>
+<p>* <code>cip.in</code>, <code>cip.v</code> parameters are being sent on first beacon after opt-in and they indicate that visitor opted-in and Consent Inlined Plugin version.</p>
+<ul>
+<li><strong>Opt-in to PageFlo (PageFlo loaded after opt-in)</strong>: PageFlo will be loaded and performance data sent after only after a visitor opts-in to PageFlo through the Cookie Consent popup.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Before opt-in</th>
+<th>After opt-in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PageFlo Loaded</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Beacons Sent</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>RT Cookie exists</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>BA Cookie  exists</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Extra beacon params</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cookies-and-local-storage"></a></p>
+<h2>2. Cookies and Local Storage</h2>
+<h2>2.1 Cookies</h2>
+<p>List of cookies created and used by PageFlo:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th><div style="width:120px">Expires</div></th>
+<th><div style="width:120px">Type</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RT</code></td>
+<td>7 days</td>
+<td>First-party</td>
+<td>Doesn't contain personal information but it contains various pieces of information about the visitor's session, such as number of visited pages, session start time, last visited url and etc.</td>
+</tr>
+<tr>
+<td><code>BA</code></td>
+<td>7 days</td>
+<td>First-party</td>
+<td>Used by Bandwidth PageFlo plugin. Doesn't contain personal information.</td>
+</tr>
+<tr>
+<td><code>PFLO_CONSENT</code></td>
+<td>1 year</td>
+<td>First-party</td>
+<td>Contains information about visitor's choice for opt-out or opt-in.</td>
+</tr>
+</tbody>
+</table>
+<p>For detailed information about what data is kept on the cookies listed above, please read the &quot;Cookies&quot; section of <a href="https://developer.akamai.com/tools/pflo/#Cookies">PageFlo documentation page</a>.</p>
+<h2>2.2 Local Storage (mPulse users specific)</h2>
+<p>For mPulse customers, in some instances PageFlo will persist data in Browser's Local Storage. In these instances a Local Storage is used for performance optimization and reduction of network round trips.</p>
+<p>List of local storage keys used by PageFlo:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th><div style="width:120px">Plugin</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_pflo_LOGN</code></td>
+<td>LOGN</td>
+<td>Persists PageFlo JSON configuration. Helps for faster PageFlo initialization. Doesn't contain personal information.</td>
+</tr>
+<tr>
+<td><code>_pflo_akamaiXhrRetry</code></td>
+<td>Akamai</td>
+<td>Persists a flag that instructs the Akamai plugin when to perform requests. Doesn't contain personal information.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="consent-inline-plugin"></a></p>
+<h2>3. Consent Inline Plugin</h2>
+<p>The Consent Inline Plugin is not part of the PageFlo build but it could be easily injected before PageFlo code which will make the plugin available. The plugin provides 2 helper functions <code>window.PFLO_OPT_OUT()</code> and <code>window.PFLO_OPT_IN()</code> that can be used for instrumenting opt-out and opt-in.</p>
+<p>When <code>window.PFLO_OPT_OUT()</code> is called PageFlo will stop sending beacon data, <code>RT</code> and <code>BA</code> cookies will be deleted and the new special <code>PFLO_CONSENT</code> cookie with value <code>opted-out</code> will be created.</p>
+<p>Consent Inline Plugin has the capability to instruct PageFlo to hold beacon sending until <code>window.PFLO_OPT_IN()</code> is called. When <code>window.PFLO_OPT_IN()</code> is called a cookie <code>PFLO_CONSENT</code> with value <code>opted-in</code> will be created.</p>
+<p>The purpose of <code>PFLO_CONSENT</code> cookie is to &quot;tell&quot; PageFlo what was the visitor's consent choice when a visitor navigates to a new page.</p>
+<p><a name="opt-out"></a></p>
+<h2>3.1 Opt-out allowed example</h2>
+<p>In case we would like to allow website visitors to opt-out from PageFlo we must follow the steps in this order:</p>
+<ol>
+<li>Inject Consent Inline Plugin configuration:</li>
+</ol>
+<pre class="prettyprint source lang-html"><code>&lt;script>
+window.PFLO_CONSENT_CONFIG = {
+     enabled: true
+};
+&lt;/script>
+</code></pre>
+<ol start="2">
+<li>Inject Consent Inline Plugin code:</li>
+</ol>
+<pre class="prettyprint source lang-html"><code>&lt;script>
+%minified_consent_inline_plugin_code%
+&lt;/script>
+</code></pre>
+<ol start="3">
+<li>Load PageFlo via loader snippet.</li>
+<li>Call <code>window.PFLO_OPT_OUT()</code> when visitor opts-out via Cookie consent popup or other UI element.</li>
+</ol>
+<p><a name="opt-in"></a></p>
+<h2>3.2 Opt-in required example</h2>
+<p>When we would like to not send Beacon data until visitor opts-in to PageFlo we must follow the steps in this order:</p>
+<ol>
+<li>Inject Consent Inline Plugin configuration:</li>
+</ol>
+<pre class="prettyprint source lang-html"><code>&lt;script>
+window.PFLO_CONSENT_CONFIG = {
+     enabled: true,
+     optInRequired: true
+};
+&lt;/script>
+</code></pre>
+<ol start="2">
+<li>Inject Consent Inline Plugin code:</li>
+</ol>
+<pre class="prettyprint source lang-html"><code>&lt;script>
+%minified_consent_inline_plugin_code%
+&lt;/script>
+</code></pre>
+<ol start="3">
+<li>Load PageFlo via loader snippet.</li>
+<li>Call <code>window.PFLO_OPT_IN()</code> when a visitor opted in via Cookie consent popup or other UI element.</li>
+</ol>
+<p><a name="opt-in-loader-wrapper"></a></p>
+<h2>4. Opt-in with PageFlo Loader Wrapper</h2>
+<p>Users of PageFlo open source and some mPulse customers have to manually inject PageFlo on the page. This opens a possibility of waiting for the PageFlo loader snippet to be executed until after a visitor opts-in to PageFlo through Cookie Consent popup. By doing so, PageFlo won't be loaded until after opt-in has been chosen.</p>
+<p>This technique is simple and can be done in 2 steps:</p>
+<ol>
+<li>Wrap PageFlo loader snippet in <strong>BOOMERANG_LOADER_SNIPPET_WRAPPER()</strong> function.
+The example below doesn't include the full loader snippet source code but you can get the full code of the loader snippet from here: <a href="tutorial-loader-snippet.html">Non-Blocking Loader Snippet</a></li>
+</ol>
+<pre class="prettyprint source lang-html"><code>&lt;script>
+var BOOMERANG_LOADER_SNIPPET_WRAPPER = function() {
+     (function() {
+          // PageFlo Loader Snippet  
+          if (window.PFLO && (window.PFLO.version || window.PFLO.snippetExecuted)) {
+               return;
+          }
+          // ...
+          // ...
+          // ...
+     })();
+}
+&lt;/script>
+</code></pre>
+<ol start="2">
+<li>Call <strong>BOOMERANG_LOADER_SNIPPET_WRAPPER()</strong> function when visitor opts-in.
+Usually Cookie Consent popup libraries provide callback functions that help us to instrument opt-out and opt-in procedures. For simplicity we will define a callback function with example name <strong>onOptIn()</strong> where we will run the code needed for opt-in. In our case we have to place <strong>BOOMERANG_LOADER_SNIPPET_WRAPPER()</strong> in our callback function <strong>onOptIn()</strong>.</li>
+</ol>
+<pre class="prettyprint source lang-html"><code>&lt;script>
+function onOptIn() {
+     BOOMERANG_LOADER_SNIPPET_WRAPPER();
+}
+&lt;/script>
+</code></pre>
+<p><a name="cookie-consent-popup-examples"></a></p>
+<h2>5. Cookie Consent library and Consent Inline Plugin example</h2>
+<p>We prepared PageFlo opt-out and opt-in examples with the popular open source project - <a href="https://github.com/osano/cookieconsent">Osano Cookie Consent popup library</a>. For the given examples below we assume that the needed Cookie Consent popup script and PageFlo Consent Inline Plugin are loaded on the page.</p>
+<p><a name="popup-examples-opt-out"></a></p>
+<h2>5.1 Opt-out</h2>
+<pre class="prettyprint source lang-javascript"><code>// Setup Osano Cookie popup
+function onCookieConsentChange(consent) {
+	if (consent === &quot;deny&quot;) {
+		window.PFLO_OPT_OUT();
+	}
+}
+
+window.addEventListener(&quot;load&quot;, function() {
+	window.cookieconsent.initialise({
+		&quot;type&quot;: &quot;opt-out&quot;,
+		&quot;content&quot;: {
+			&quot;href&quot;: &quot;https://www.example.com/policies/&quot;
+		},
+		onInitialise: onCookieConsentChange,
+		onStatusChange: onCookieConsentChange,
+		onRevokeChoice: onCookieConsentChange
+	});
+});
+</code></pre>
+<p><a name="popup-examples-opt-in"></a></p>
+<h2>5.2 Opt-in</h2>
+<pre class="prettyprint source lang-javascript"><code>// Setup Osano Cookie popup
+function onCookieConsentChange(consent) {
+	if (consent === &quot;allow&quot;) {
+		window.PFLO_OPT_IN();
+	}
+}
+
+window.addEventListener(&quot;load&quot;, function() {
+	window.cookieconsent.initialise({
+		&quot;type&quot;: &quot;opt-in&quot;,
+		&quot;content&quot;: {
+			&quot;href&quot;: &quot;https://www.example.com/policies/&quot;
+		},
+		onInitialise: onCookieConsentChange,
+		onStatusChange: onCookieConsentChange,
+		onRevokeChoice: onCookieConsentChange
+	});
+});
+</code></pre>
+</article>
+
+
+
+</section>
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2010-2021 doFlo, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a>
+	
+		on Fri Aug 13th 2021
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+Content-Security-Policy: frame-src 'none'
+Content-Security-Policy: child-src 'none'
+Content-Security-Policy: script-src pflo-test.local:* 'nonce-pflo-test-1' 'nonce-pflo-test-2' 'nonce-pflo-test-3' 'nonce-pflo-test-4' 'nonce-pflo-test-5'
+Content-Security-Policy: style-src pflo-test.local:*
+Content-Security-Policy: img-src pflo-test.local:*
+Content-Security-Policy: connect-src pflo-test.local:*

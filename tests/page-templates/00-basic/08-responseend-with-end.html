@@ -1,0 +1,15 @@
+<%= header %>
+<%= pfloScript %>
+<script src="08-responseend-with-end.js" type="text/javascript"></script>
+<script type="text/javascript">
+PFLO_test.init({
+	testAfterOnBeacon: 2,
+	afterFirstBeacon: function() {
+		// fire a beacon with start and end specified
+		var end = PFLO.now() - 100;
+		var start = end - 1000;
+		PFLO.responseEnd("foo", start, null, end);
+	}
+});
+</script>
+<%= footer %>

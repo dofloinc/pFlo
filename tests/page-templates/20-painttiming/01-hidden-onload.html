@@ -1,0 +1,20 @@
+<%= header %>
+<!-- add an image so the screen is painted before PageFlo loads -->
+<img src="/assets/img.jpg" />
+<%= pfloScript %>
+<script src="01-hidden-onload.js" type="text/javascript"></script>
+<script>
+
+// hack visibilityState to always be hidden
+PFLO.visibilityState = function() {
+	return "hidden";
+};
+
+PFLO_test.init({
+	PaintTiming: {
+		enabled: true
+	},
+	testAfterOnBeacon: true
+});
+</script>
+<%= footer %>

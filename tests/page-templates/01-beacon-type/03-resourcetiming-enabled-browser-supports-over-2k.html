@@ -1,0 +1,23 @@
+<%= header %>
+<%= pfloSnippet %>
+<%= disableSendBeacon %>
+<script src="03-resourcetiming-enabled-browser-supports-over-2k.js" type="text/javascript"></script>
+<script>
+var len = 2000;
+var str = "";
+
+PFLO_test.init({
+	ResourceTiming: {
+		enabled: true
+	},
+	testAfterOnBeacon: true,
+	onPageFloLoaded: function() {
+		PFLO.addVar("long", str);
+	}
+});
+
+for (var i = 0; i < len; i++) {
+	str += "a";
+}
+</script>
+<%= footer %>
