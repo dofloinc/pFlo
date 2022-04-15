@@ -9,11 +9,13 @@ if [[ "$GITHUB_REF" =~ ^refs/tags/v.*$ && "$GITHUB_EVENT_NAME" == "release" ]]; 
   SERVICE_PATH="prod/us-west-2/prod/services/version-tracking-script"
   BUCKET_NAME="scripts.doflo.com"
   IAM_ROLE_ARN="arn:aws:iam::202218563153:role/allow-auto-deploy-from-other-accounts"
+  DIST_ID="E1WHJMX2X5DR9L"  # this is a bit of a hack this should be moved into the terragrunt code and look up the distribution based on the last time the setup code has run
 elif [[ "$GITHUB_REF" == "refs/heads/master" ]]; then
   echo "On master branch. Deploying to stage."
   SERVICE_PATH="stage/us-west-2/stage/services/version-tracking-script"
   BUCKET_NAME="scripts.stage-doflo.com"
   IAM_ROLE_ARN="arn:aws:iam::540659175989:role/allow-auto-deploy-from-other-accounts"
+  DIST_ID="E4YFVYX7RPRTT"  # this is a bit of a hack this should be moved into the terragrunt code and look up the distribution based on the last time the setup code has run
 else
   echo "Did not find release tag or master branch, so skipping deploy."
   exit 0
@@ -64,3 +66,11 @@ terraform-update-variable \
 
 echo "🤖 Terragrunt Apply Running as Role:$IAM_ROLE_ARN"
 terragrunt apply --terragrunt-working-dir "/tmp/infrastructure-live/$SERVICE_PATH"  --terragrunt-iam-role "$IAM_ROLE_ARN" -input=false -auto-approve
+
+echo "🤖 Assume Role $IAM_ROLE_ARN"
+eval $(aws-auth --role-arn $IAM_ROLE_ARN --role-duration-seconds 3600 --role-session-name flow-www-ci-$GITHUB_SHA)
+
+echo "🤖 Invalidate Distribution: $DIST_ID"
+aws cloudfront create-invalidation \
+  --distribution-id $DIST_ID \
+  --paths "/*"
