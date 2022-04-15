@@ -33,6 +33,7 @@ jobs:
     needs: login
     container:
       image: 542393931612.dkr.ecr.us-west-2.amazonaws.com/github-node-builder:v0.0.6
+      options: --user root
       credentials:
         username: AWS
         password: ${{ needs.login.outputs.token }} ## Short Lived ECR Token
