@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: login
     container:
-      image: 542393931612.dkr.ecr.us-west-2.amazonaws.com/github-static-site:v0.0.1
+      image: 542393931612.dkr.ecr.us-west-2.amazonaws.com/github-static-site:v0.0.5
       credentials:
         username: AWS
         password: ${{ needs.login.outputs.token }} ## Short Lived ECR Token
