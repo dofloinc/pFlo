@@ -3,7 +3,7 @@ name: Github Build
 on:
   push:
     branches:
-      - main
+      - master
   # pull_request: this is picked up automatically by a push to master
   #   types:
   #     - closed
