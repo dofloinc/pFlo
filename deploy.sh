@@ -30,7 +30,7 @@ git config --global push.default simple --no-rebase
 # Save Current Role
 PRIOR_AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID"
 PRIOR_AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY"
-
+ 
 # Switch Roles
 echo "👻 AWS Assume Role"
 eval $(aws sts assume-role --role-arn "$IAM_ROLE_ARN" --role-session-name test | jq -r '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\nexport AWS_SECRET_ACCESS_KEY=\(.SecretAccessKey)\nexport AWS_SESSION_TOKEN=\(.SessionToken)\n"')
