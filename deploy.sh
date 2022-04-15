@@ -23,6 +23,8 @@ fi
 
 echo "🤖 Starting Build" 
 
+chown root:root -R .
+
 npm ci
 
 npm run build
