@@ -67,10 +67,10 @@ terraform-update-variable \
 echo "🤖 Terragrunt Apply Running as Role:$IAM_ROLE_ARN"
 terragrunt apply --terragrunt-working-dir "/tmp/infrastructure-live/$SERVICE_PATH"  --terragrunt-iam-role "$IAM_ROLE_ARN" -input=false -auto-approve
 
-# echo "🤖 Assume Role $IAM_ROLE_ARN"
-# eval $(aws-auth --role-arn $IAM_ROLE_ARN --role-duration-seconds 3600 --role-session-name flow-www-ci-$GITHUB_SHA)
+echo "🤖 Assume Role $IAM_ROLE_ARN"
+eval $(aws-auth --role-arn $IAM_ROLE_ARN --role-duration-seconds 3600 --role-session-name flow-www-ci-$GITHUB_SHA)
 
-# echo "🤖 Invalidate Distribution: $DIST_ID"
-# aws cloudfront create-invalidation \
-#   --distribution-id $DIST_ID \
-#   --paths "/*"
+echo "🤖 Invalidate Distribution: $DIST_ID"
+aws cloudfront create-invalidation \
+  --distribution-id $DIST_ID \
+  --paths "/*"
