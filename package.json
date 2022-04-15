@@ -81,7 +81,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "install": "bower install && webdriver-manager update --versions.chrome=$(google-chrome --product-version)",
+    
     "build": "grunt clean build",
     "lint": "grunt lint",
     "unit-test": "grunt test:unit",
