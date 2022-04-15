@@ -57,6 +57,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} ## Machine User for Builds
           AWS_REGION: us-west-2
       - name: Collect npm debug logs
+        if: ${{ failure() }}
         uses: actions/upload-artifact@v3
         with:
           name: npm-dbg-logs
