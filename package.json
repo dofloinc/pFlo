@@ -16,7 +16,7 @@
     "usertiming-compression": "^0.1.9"
   },
   "devDependencies": {
-    "async": "^0.9.2",
+    "async": "^2.6.4",
     "bower": "*",
     "chai": "^1.10.0",
     "chrome-launcher": "^0.13.4",
