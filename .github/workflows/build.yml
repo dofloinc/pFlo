@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: npm-dbg-logs
-          path: /github/home/.npm/_logs/
+          path: /github/home/.npm/_logs/*
       - name: Slack Notify
         uses: rtCamp/action-slack-notify@v2.1.1
         env:
