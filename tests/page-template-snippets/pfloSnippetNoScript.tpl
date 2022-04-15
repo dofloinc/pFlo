@@ -1,3 +1,4 @@
+/* eslint-disable no-script-url */
 (function() {
 	// PageFlo Loader Snippet version 14
 	if (window.PFLO && (window.PFLO.version || window.PFLO.snippetExecuted)) {
