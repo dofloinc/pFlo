@@ -825,7 +825,7 @@ module.exports = function() {
 					"FirefoxHeadless",
 					"IE",
 					"Opera",
-					//"PhantomJS",
+					"PhantomJS",
 					"Safari",
 					"Edge"
 				]
@@ -834,7 +834,7 @@ module.exports = function() {
 				browsers: [
 					"ChromeHeadless",
 					"FirefoxHeadless",
-					//"PhantomJS"
+					"PhantomJS"
 				]
 			},
 			Chrome: {
@@ -858,9 +858,9 @@ module.exports = function() {
 			Opera: {
 				browsers: ["Opera"]
 			},
-			// PhantomJS: {
-			// 	browsers: ["PhantomJS"]
-			//},
+			PhantomJS: {
+				browsers: ["PhantomJS"]
+			},
 			Safari: {
 				browsers: ["Safari"]
 			},
@@ -874,20 +874,20 @@ module.exports = function() {
 				noColor: false,
 				keepAlive: false
 			},
-			// PhantomJS: {
-			// 	options: {
-			// 		configFile: "tests/protractor.config.phantom.js",
-			// 		args: {
-			// 			seleniumAddress: SELENIUM_ADDRESS,
-			// 			specs: ["tests/e2e/e2e.js"],
-			// 			baseUrl: E2E_BASE_URL,
-			// 			capabilities: {
-			// 				browserName: "phantomjs",
-			// 				"phantomjs.binary.path": require("phantomjs").path
-			// 			}
-			// 		}
-			// 	}
-			// },
+			PhantomJS: {
+				options: {
+					configFile: "tests/protractor.config.phantom.js",
+					args: {
+						seleniumAddress: SELENIUM_ADDRESS,
+						specs: ["tests/e2e/e2e.js"],
+						baseUrl: E2E_BASE_URL,
+						capabilities: {
+							browserName: "phantomjs",
+							"phantomjs.binary.path": require("phantomjs").path
+						}
+					}
+				}
+			},
 			Chrome: {
 				options: {
 					configFile: "tests/protractor.config.chrome.js",
@@ -1266,13 +1266,13 @@ module.exports = function() {
 		"test:unit:IE": ["build", "karma:IE"],
 		"test:unit:Opera": ["build", "karma:Opera"],
 		"test:unit:Safari": ["build", "karma:Safari"],
-		// "test:unit:PhantomJS": ["build", "karma:PhantomJS"],
+		"test:unit:PhantomJS": ["build", "karma:PhantomJS"],
 
 		// End-to-End tests
 		"test:e2e": ["test:e2e:" + DEFAULT_BROWSER],
 		"test:e2e:browser": ["test:build", "build", "express:dev", "express:secondary"],
 		"test:e2e:debug": ["test:e2e:browser", "protractor:debug"],
-		// "test:e2e:PhantomJS": ["test:e2e:browser", "protractor:PhantomJS"],
+		"test:e2e:PhantomJS": ["test:e2e:browser", "protractor:PhantomJS"],
 		"test:e2e:Chrome": ["test:e2e:browser", "protractor:Chrome"],
 		"test:e2e:ChromeHeadless": ["test:e2e:browser", "protractor:ChromeHeadless"],
 		"test:e2e:Firefox": ["test:e2e:browser", "protractor:Firefox"],
