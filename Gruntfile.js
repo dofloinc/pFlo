@@ -883,7 +883,7 @@ module.exports = function() {
 						baseUrl: E2E_BASE_URL,
 						capabilities: {
 							browserName: "phantomjs",
-							"phantomjs.binary.path": require("phantomjs").path
+							"phantomjs.binary.path": require("phantomjs-prebuilt").path
 						}
 					}
 				}
