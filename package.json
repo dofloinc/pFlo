@@ -57,7 +57,7 @@
     "grunt-template": "^0.2.3",
     "gruntify-eslint": "^3.1.0",
     "history": "^1.12.5",
-    "jasmine-reporters": "^2.2.1",
+    "jasmine-reporters": "^2.5.0",
     "jsdoc": "^3.6.2",
     "json5": "^2.1.0",
     "karma": "^6.3.4",
