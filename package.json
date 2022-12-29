@@ -59,7 +59,7 @@
     "history": "^1.12.5",
     "jasmine-reporters": "^2.2.1",
     "jsdoc": "^3.6.2",
-    "json5": "^2.1.0",
+    "json5": "^2.2.2",
     "karma": "^6.3.4",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^0.2.6",
