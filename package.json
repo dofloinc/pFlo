@@ -33,7 +33,7 @@
     "fs-extra": "^5.0.0",
     "grunt": "^1.4.1",
     "grunt-babel": "^5.0.3",
-    "grunt-browserify": "^4.0.1",
+    "grunt-browserify": "^6.0.0",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-compress": "^1.4.3",
